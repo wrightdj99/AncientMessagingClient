@@ -15,7 +15,7 @@ public class Client extends JFrame{
     private Socket connection;
 
     public Client(String host){
-        super("Ancient Instant Messaging");
+        super("Instant Messaging Client");
         serverIP = host;
         userText = new JTextField();
         userText.setEditable(false);
@@ -31,7 +31,7 @@ public class Client extends JFrame{
         add(userText, BorderLayout.NORTH);
         chatWindow = new JTextArea();
         add(new JScrollPane(chatWindow), BorderLayout.CENTER);
-        setSize(300, 150);
+        setSize(600, 600);
         setVisible(true);
     }
 
@@ -95,7 +95,7 @@ public class Client extends JFrame{
 
     private void sendMessage(String message){
         try{
-            output.writeObject("CLIENT - " + message);
+            output.writeObject("\nCLIENT - " + message);
             output.flush();
             showMessage("\nCLIENT - " + message);
         }
