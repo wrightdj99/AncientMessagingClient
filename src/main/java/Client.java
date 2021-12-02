@@ -55,7 +55,7 @@ public class Client extends JFrame{
 
     private void connectToServer() throws IOException{
         showMessage("Attempting connection...\n");
-        connection = new Socket(InetAddress.getByName(serverIP), 6789);
+        connection = new Socket(InetAddress.getByName(serverIP), 6788);
         showMessage("You are connected to: " + connection.getInetAddress().getHostName());
     }
 
@@ -77,7 +77,7 @@ public class Client extends JFrame{
                 showMessage("\nUnknown object type\n");
             }
         }
-        while(!message.equals("SERVER - END"));
+        while(!message.equals("CLIENT - END"));
     }
 
     private void closeAll(){
